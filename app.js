@@ -93,6 +93,6 @@ window.addEventListener("load", () =>{
     document.querySelector(".pg-loader").classList.add("fade-out");
     setTimeout(() =>{
         document.querySelector(".pg-loader").style.display = "none";
-    },700);
+    },800);
 
 });
