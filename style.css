@@ -354,7 +354,7 @@ button{
 .about-img .img-box{
     max-width: 380px;
     background-color: var(--white-alpha-25);
-    border: 1px solid var(--white-alpha-40);
+    border: 1px solid var(--main-color);
     border-radius: 10px;
     margin: auto;
 }
