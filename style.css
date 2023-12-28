@@ -354,7 +354,7 @@ button{
 .about-img .img-box{
     max-width: 380px;
     background-color: var(--white-alpha-25);
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--white-alpha-40);
     border-radius: 10px;
     margin: auto;
 }
@@ -643,6 +643,7 @@ button{
 .contact-item{
     margin: 0 0 30px;
     padding: 0 0 0 20px;
+    color: var(--dark-blue);
 }
 .contact-item h3{
     font-size: 20px;
