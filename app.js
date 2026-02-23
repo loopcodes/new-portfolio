@@ -5,7 +5,6 @@ const navToggler = document.querySelector(".nav-toggler");
 
 
 
-
 tabsContainer.addEventListener("click", (e) =>{
     if(e.target.classList.contains("tab-item") && !e.target.classList.contains("active")){
         tabsContainer.querySelector(".active").classList.remove("active");
@@ -95,4 +94,40 @@ window.addEventListener("load", () =>{
         document.querySelector(".pg-loader").style.display = "none";
     },800);
 
+});
+
+document.querySelectorAll('.timeline-wrapper').forEach(wrapper => {
+  const timeline = wrapper.querySelector('.timeline');
+  const nextBtn = wrapper.querySelector('.next');
+  const prevBtn = wrapper.querySelector('.prev');
+
+  const scrollAmount = 400; // adjust if needed
+
+  nextBtn.addEventListener('click', () => {
+    timeline.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    timeline.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+});
+
+function updateButtons(timeline, prevBtn, nextBtn) {
+  prevBtn.style.opacity = timeline.scrollLeft > 0 ? "1" : "0.3";
+  nextBtn.style.opacity =
+    timeline.scrollLeft + timeline.clientWidth < timeline.scrollWidth
+      ? "1"
+      : "0.3";
+}
+
+document.querySelectorAll('.timeline-wrapper').forEach(wrapper => {
+  const timeline = wrapper.querySelector('.timeline');
+  const nextBtn = wrapper.querySelector('.next');
+  const prevBtn = wrapper.querySelector('.prev');
+
+  updateButtons(timeline, prevBtn, nextBtn);
+
+  timeline.addEventListener('scroll', () => {
+    updateButtons(timeline, prevBtn, nextBtn);
+  });
 });
