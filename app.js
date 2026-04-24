@@ -82,10 +82,12 @@ document.addEventListener("click", (e) => {
   const target = e.target;
 
   // Open project popup
-  if (target.classList.contains("view-project-btn")) {
+  const projectBtn = target.closest(".view-project-btn");
+
+  if (projectBtn) {
     togglePortfolioPopup();
     portfolioPopup.scrollTo(0, 0);
-    portfolioItemDetails(target.parentElement);
+    portfolioItemDetails(projectBtn.parentElement);
   }
 
   // Close popup on outside click
